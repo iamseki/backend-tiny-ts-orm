@@ -10,4 +10,5 @@ Database is configured per environment in `ormconfig.yml`
 
 Doesn't matter where you create the migration so yarn typeorm migration:create -n NameOfMigration works in yarn production script either.
 
+SQLite just works in database that dont uses timestamp data type
 ---

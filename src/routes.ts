@@ -6,6 +6,7 @@ const routes = Router();
 const studentsRouter = Router();
 
 studentsRouter.get('/', StudentController.read);
+// studentsRouter.get('/:ra', StudentController.getOne)
 
 routes.use('/students', studentsRouter);
 
