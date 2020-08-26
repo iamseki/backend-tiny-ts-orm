@@ -12,3 +12,8 @@ Doesn't matter where you create the migration so yarn typeorm migration:create -
 
 SQLite just works in database that dont uses timestamp data type
 ---
+
+# Testing
+
+- Unit tests are besides it services
+- Integration tests lives in `__tests__` folder
