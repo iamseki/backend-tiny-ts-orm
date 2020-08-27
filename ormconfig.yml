@@ -5,8 +5,8 @@ default: # default is development connection
     username: "postgres"
     password: "postgres"
     database: "postgres"
-    entities: ["./src/entities/*.ts"]
-    migrations: ["./src/database/migrations/*.ts"]
+    entities: ["./src/entities/*.\"ts,js\""]
+    migrations: ["./src/database/migrations/*.\"ts,js\""]
     cli: { "migrationsDir": "./src/database/migrations" }
 
 custom: # custom connection with sqlite if project allows it dont need timestamp data type and so on
