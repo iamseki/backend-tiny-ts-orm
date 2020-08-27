@@ -1,5 +1,7 @@
-import { getRepository, createConnection, Connection } from 'typeorm';
+import { createConnection, Connection } from 'typeorm';
+import Subject from '../entities/Subject';
 import Student from '../entities/Student';
+import SomeBusinessLogicService from './SomeBusinessLogic';
 
 let connection: Connection;
 
@@ -13,7 +15,13 @@ afterAll(async () => {
 
 describe('Testing Business Logic Service', () => {
   it('Should returning an empty array', async () => {
-    const students = await getRepository(Student).createQueryBuilder().getMany();
-    expect(students.length).toBe(0);
+    const businessLogicService = new SomeBusinessLogicService();
+
+    const studentsPerSubjects = await businessLogicService.execute();
+
+    expect(studentsPerSubjects).toMatchObject<Subject[]>(studentsPerSubjects);
+    studentsPerSubjects.forEach(element => {
+      expect(element.students).toMatchObject<Student[]>(element.students);
+    });
   });
 });

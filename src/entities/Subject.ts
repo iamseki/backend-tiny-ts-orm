@@ -11,7 +11,9 @@ class Subject {
 
   // JoinTable is used for many-to-many relations
   @ManyToMany(() => Student)
-  @JoinTable()
+  @JoinTable({
+    name: 'students_subjects',
+  })
   students: Student[];
 }
 

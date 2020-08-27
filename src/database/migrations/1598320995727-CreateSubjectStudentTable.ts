@@ -16,11 +16,11 @@ export default class CreateSubjectStudentTable1598320995727 implements Migration
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'student_id',
+            name: 'studentsId',
             type: 'uuid',
           },
           {
-            name: 'subject_id',
+            name: 'subjectsId',
             type: 'uuid',
           },
         ],
@@ -30,7 +30,7 @@ export default class CreateSubjectStudentTable1598320995727 implements Migration
     await queryRunner.createForeignKey(
       'students_subjects',
       new TableForeignKey({
-        columnNames: ['student_id'],
+        columnNames: ['studentsId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'students',
       })
@@ -39,7 +39,7 @@ export default class CreateSubjectStudentTable1598320995727 implements Migration
     await queryRunner.createForeignKey(
       'students_subjects',
       new TableForeignKey({
-        columnNames: ['subject_id'],
+        columnNames: ['subjectsId'],
         referencedColumnNames: ['id'],
         referencedTableName: 'subjects',
       })
@@ -48,10 +48,10 @@ export default class CreateSubjectStudentTable1598320995727 implements Migration
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     const table = await queryRunner.getTable('students_subjects');
-    let foreignKey = (table as Table).foreignKeys.find(fk => fk.columnNames.indexOf('student_id') !== -1);
+    let foreignKey = (table as Table).foreignKeys.find(fk => fk.columnNames.indexOf('studentsId') !== -1);
     await queryRunner.dropForeignKey('students_subjects', foreignKey as TableForeignKey);
 
-    foreignKey = (table as Table).foreignKeys.find(fk => fk.columnNames.indexOf('subject_id') !== -1);
+    foreignKey = (table as Table).foreignKeys.find(fk => fk.columnNames.indexOf('subjectsId') !== -1);
     await queryRunner.dropForeignKey('students_subjects', foreignKey as TableForeignKey);
 
     await queryRunner.dropTable('students_subjects');

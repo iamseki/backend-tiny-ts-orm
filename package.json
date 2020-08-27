@@ -8,7 +8,7 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "start": "ts-node src/server.ts",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -t=false",
     "custom": "ts-node ./node_modules/typeorm/cli.js -c custom -t=false",
     "test": "jest --verbose --runInBand",
     "prod:server" :"NODE_ENV=PRODUCTION node dist/server.js"

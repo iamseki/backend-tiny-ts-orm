@@ -8,6 +8,9 @@ class Student {
   @Column()
   name: string;
 
+  @Column()
+  email: string;
+
   @Column({ unique: true, length: 11 })
   cpf: string;
 

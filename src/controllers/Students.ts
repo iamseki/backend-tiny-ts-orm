@@ -10,10 +10,10 @@ class StudentsController {
 
     const businessLogicService = new SomeBusinessLogicService();
 
-    const students = await businessLogicService.execute();
-    const statusCode = students.length === 0 ? 204 : 200;
+    const studentsPerSubjects = await businessLogicService.execute();
+    const statusCode = studentsPerSubjects.length === 0 ? 204 : 200;
 
-    return response.status(statusCode).json(students);
+    return response.status(statusCode).json(studentsPerSubjects);
   }
 }
 // singleton pattern
