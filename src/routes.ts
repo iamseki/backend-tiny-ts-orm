@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import AppError from 'errors/AppError';
+import AppError from './errors/AppError';
 import StudentController from './controllers/Students';
 
 const routes = Router();

@@ -11,7 +11,8 @@
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js -t=false",
     "custom": "ts-node ./node_modules/typeorm/cli.js -c custom -t=false",
     "test": "jest --verbose --runInBand",
-    "prod:server" :"NODE_ENV=PRODUCTION node dist/server.js"
+    "prod:server" :"NODE_ENV=PRODUCTION node dist/server.js",
+    "production": "node dist/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
